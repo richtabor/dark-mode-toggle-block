@@ -1,16 +1,26 @@
 /*!***************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/style.scss ***!
   \***************************************************************************************************************************************************************************************************************************************/
+.wp-block-tabor-appearance-toggle {
+  --icon-size: 16px;
+}
+.wp-block-tabor-appearance-toggle.is-medium {
+  --icon-size: 18px;
+}
+.wp-block-tabor-appearance-toggle.is-large {
+  --icon-size: 20px;
+}
+
 .wp-block-tabor-appearance-toggle__label {
-  margin: 0;
-  display: flex;
   align-items: center;
+  display: flex;
+  margin: 0;
 }
 
 .wp-block-tabor-appearance-toggle__input {
-  clip: rect(0 0 0 0);
   -webkit-clip-path: inset(50%);
           clip-path: inset(50%);
+  clip: rect(0 0 0 0);
   height: 1px;
   overflow: hidden;
   position: absolute;
@@ -18,35 +28,16 @@
   width: 1px;
 }
 
-.is-large .wp-block-tabor-appearance-toggle__track {
-  height: 32px;
-  padding: 0 6px;
-  width: 46px;
-}
-.is-large .wp-block-tabor-appearance-toggle__selector {
-  height: 22px;
-  width: 22px;
-}
-.is-large .wp-block-tabor-appearance-toggle__icon,
-.is-large .wp-block-tabor-appearance-toggle__icon svg {
-  width: 18px;
-  height: 18px;
-}
-
-.theme-dark .wp-block-tabor-appearance-toggle.is-large .wp-block-tabor-appearance-toggle__input + .wp-block-tabor-appearance-toggle__track .wp-block-tabor-appearance-toggle__selector {
-  transform: translateX(24px) rotate(0);
-}
-
 .wp-block-tabor-appearance-toggle__track {
+  align-items: center;
+  border-radius: 100px;
   cursor: pointer;
   display: flex;
-  height: 28px;
+  height: calc(var(--icon-size) * 1.75);
+  padding: 0 calc(var(--icon-size) * 0.25);
   position: relative;
-  width: 40px;
-  align-items: center;
-  padding: 0 4px;
-  border-radius: 100px;
-  transition: background-color var(--wp--custom--transition--duration, 200ms) ease-out, color var(--wp--custom--transition--duration, 200ms) ease-out;
+  transition: background-color var(--wp--custom--transition--duration, 200ms) ease-out;
+  width: calc(var(--icon-size) * 2.5);
 }
 .wp-block-tabor-appearance-toggle__track:not(.has-background) {
   background: var(--wp--preset--color--theme-3);
@@ -59,53 +50,39 @@
 .wp-block-tabor-appearance-toggle__selector {
   align-items: center;
   border-radius: 100%;
-  height: 20px;
-  transition: var(--wp--custom--transition--duration, 200ms);
-  width: 20px;
   display: flex;
+  height: calc(var(--icon-size) * 1.25);
   justify-content: center;
-  transition: transform 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform var(--wp--custom--transition--duration, 200ms) ease-out;
+  width: calc(var(--icon-size) * 1.25);
+  will-change: transform;
 }
 
 .wp-block-tabor-appearance-toggle__icon {
-  opacity: 1;
-  color: currentColor;
-  transition: opacity 100ms cubic-bezier(0.215, 0.61, 0.355, 1);
-  position: absolute;
-  will-change: transform, opacity;
   backface-visibility: hidden;
   border-radius: 100%;
+  color: currentColor;
+  opacity: 1;
+  position: absolute;
 }
 .wp-block-tabor-appearance-toggle__icon,
 .wp-block-tabor-appearance-toggle__icon svg {
-  width: 16px;
-  height: 16px;
-}
-
-.wp-block-tabor-appearance-toggle:not(.is-style-eye):not(.is-style-circle) .wp-block-tabor-appearance-toggle__icon--dark svg {
-  transition: transform 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.wp-block-tabor-appearance-toggle__icon--dark svg {
-  transform: rotate(40deg);
-}
-
-.theme-dark .wp-block-tabor-appearance-toggle__input + .wp-block-tabor-appearance-toggle__track .wp-block-tabor-appearance-toggle__icon--dark svg {
-  transform: rotate(0);
+  width: var(--icon-size);
+  height: var(--icon-size);
 }
 
 .theme-dark .wp-block-tabor-appearance-toggle__input + .wp-block-tabor-appearance-toggle__track .wp-block-tabor-appearance-toggle__selector {
-  transform: translateX(20px) rotate(0);
+  transform: translateX(calc(var(--icon-size) * 1.25));
 }
 
 .wp-block-tabor-appearance-toggle__icon--dark,
 .theme-dark .wp-block-tabor-appearance-toggle__icon--light {
-  opacity: 0;
+  visibility: hidden;
 }
 
 .wp-block-tabor-appearance-toggle__icon--light,
 .theme-dark .wp-block-tabor-appearance-toggle__icon--dark {
-  opacity: 1;
+  visibility: visible;
 }
 
 /*# sourceMappingURL=style-index.css.map*/

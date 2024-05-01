@@ -124,6 +124,9 @@ function Edit({
     value: "small",
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('Small', 'appearance-toggle-block')
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalToggleGroupControlOption, {
+    value: "medium",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('Medium', 'appearance-toggle-block')
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalToggleGroupControlOption, {
     value: "large",
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('Large', 'appearance-toggle-block')
   }))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -825,7 +828,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 /***/ (function(module) {
 
 "use strict";
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"tabor/appearance-toggle","version":"0.1.0","title":"Appearance Toggle","category":"design","description":"Allow visitors to switch between light and dark appearances.","supports":{"color":{"link":false,"text":true,"__experimentalSkipSerialization":true},"__experimentalBorder":{"color":true,"radius":true,"style":true,"width":true,"__experimentalSkipSerialization":true,"__experimentalDefaultControls":{"color":false,"radius":false,"style":false,"width":false}},"html":false,"multiple":false,"__experimentalSelector":".wp-block-tabor-appearance-toggle__track"},"attributes":{"icon":{"type":"string"},"size":{"type":"string","default":"small"}},"styles":[{"name":"filled","label":"Filled","isDefault":true},{"name":"stroke","label":"Stroke"},{"name":"circle","label":"Circle"},{"name":"eye","label":"Eye"}],"textdomain":"appearance-toggle","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"tabor/appearance-toggle","version":"0.1.0","title":"Appearance Toggle","category":"design","description":"Allow visitors to switch between light and dark appearances.","supports":{"color":{"link":false,"text":true,"__experimentalSkipSerialization":true},"__experimentalBorder":{"color":true,"radius":true,"style":true,"width":true,"__experimentalSkipSerialization":true,"__experimentalDefaultControls":{"color":false,"radius":false,"style":false,"width":false}},"html":false,"__experimentalSelector":".wp-block-tabor-appearance-toggle__track"},"attributes":{"icon":{"type":"string"},"size":{"type":"string","default":"small"}},"styles":[{"name":"filled","label":"Filled","isDefault":true},{"name":"stroke","label":"Stroke"},{"name":"circle","label":"Circle"},{"name":"eye","label":"Eye"}],"textdomain":"appearance-toggle","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ })
 
