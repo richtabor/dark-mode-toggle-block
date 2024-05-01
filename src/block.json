@@ -26,7 +26,6 @@
 			}
 		},
 		"html": false,
-		"multiple": false,
 		"__experimentalSelector": ".wp-block-tabor-appearance-toggle__track"
 	},
 	"attributes": {
