@@ -1,0 +1,25 @@
+{
+	"name": "tabor-appearance-toggle-block",
+	"version": "0.1.0",
+	"description": "A WordPress block for toggling between between light and dark appearance on your site.",
+	"author": "Rich Tabor",
+	"license": "GPL-2.0-or-later",
+	"main": "build/index.js",
+	"scripts": {
+		"build": "wp-scripts build",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"lint:js-fix": "wp-scripts lint-js --fix",
+		"packages-update": "wp-scripts packages-update",
+		"plugin-zip": "wp-scripts plugin-zip",
+		"start": "wp-scripts start",
+		"dev": "wp-scripts start"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^26.14.0"
+	},
+	"dependencies": {
+		"classnames": "^2.5.1"
+	}
+}
