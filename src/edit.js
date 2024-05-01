@@ -109,6 +109,13 @@ export default function Edit( { attributes, setAttributes } ) {
 								) }
 							/>
 							<ToggleGroupControlOption
+								value="medium"
+								label={ __(
+									'Medium',
+									'appearance-toggle-block'
+								) }
+							/>
+							<ToggleGroupControlOption
 								value="large"
 								label={ __(
 									'Large',
