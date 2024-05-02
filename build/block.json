@@ -1,9 +1,9 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 2,
-  "name": "tabor/appearance-toggle",
+  "name": "tabor/dark-mode-toggle",
   "version": "0.1.0",
-  "title": "Appearance Toggle",
+  "title": "Dark Mode Toggle",
   "category": "design",
   "description": "Allow visitors to switch between light and dark appearances.",
   "supports": {
@@ -26,7 +26,7 @@
       }
     },
     "html": false,
-    "__experimentalSelector": ".wp-block-tabor-appearance-toggle__track"
+    "__experimentalSelector": ".wp-block-tabor-dark-mode-toggle__track"
   },
   "attributes": {
     "icon": {

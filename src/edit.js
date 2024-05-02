@@ -33,12 +33,7 @@ import { Icons } from './icons';
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
  *
- * @param  root0
- * @param  root0.attributes
- * @param  root0.setAttributes
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
- *
- * @return {WPElement} Element to render.
  */
 export default function Edit( { attributes, setAttributes } ) {
 	const { className, icon, size } = attributes;
@@ -64,24 +59,24 @@ export default function Edit( { attributes, setAttributes } ) {
 		};
 
 		// Find the first matching style and set the corresponding icon.
-		const icon = Object.keys( styleToIcons ).find( ( style ) =>
+		const iconString = Object.keys( styleToIcons ).find( ( style ) =>
 			className?.includes( style )
 		);
 
-		if ( icon ) {
-			setAttributes( { icon: styleToIcons[ icon ] } );
+		if ( iconString ) {
+			setAttributes( { icon: styleToIcons[ iconString ] } );
 		} else {
 			// Reset or handle the attribute when no styles are matched.
 			setAttributes( { icon: undefined } );
 		}
-	}, [ className ] );
+	}, [ className, setAttributes ] );
 
 	return (
 		<>
 			<InspectorControls group="styles">
-				<ToolsPanel label={ __( 'Size' ) }>
+				<ToolsPanel label={ __( 'Size', 'dark-mode-toggle-block' ) }>
 					<ToolsPanelItem
-						label={ __( 'Size' ) }
+						label={ __( 'Size', 'dark-mode-toggle-block' ) }
 						isShownByDefault
 						hasValue={ () => !! size }
 						onDeselect={ () =>
@@ -89,7 +84,7 @@ export default function Edit( { attributes, setAttributes } ) {
 						}
 					>
 						<ToggleGroupControl
-							label={ __( 'Invert', 'appearance-toggle-block' ) }
+							label={ __( 'Size', 'dark-mode-toggle-block' ) }
 							hideLabelFromVision
 							value={ size }
 							onChange={ ( value ) => {
@@ -103,23 +98,38 @@ export default function Edit( { attributes, setAttributes } ) {
 						>
 							<ToggleGroupControlOption
 								value="small"
+								/* translators: S stands for 'small' and is a size label. */
 								label={ __(
+									'S',
+									'dark-mode-toggle-block'
+								) }
+								aria-label={ __(
 									'Small',
-									'appearance-toggle-block'
+									'dark-mode-toggle-block'
 								) }
 							/>
 							<ToggleGroupControlOption
 								value="medium"
+								/* translators: M stands for 'medium' and is a size label. */
 								label={ __(
+									'M',
+									'dark-mode-toggle-block'
+								) }
+								aria-label={ __(
 									'Medium',
-									'appearance-toggle-block'
+									'dark-mode-toggle-block'
 								) }
 							/>
 							<ToggleGroupControlOption
 								value="large"
+								/* translators: M stands for 'medium' and is a size label. */
 								label={ __(
+									'L',
+									'dark-mode-toggle-block'
+								) }
+								aria-label={ __(
 									'Large',
-									'appearance-toggle-block'
+									'dark-mode-toggle-block'
 								) }
 							/>
 						</ToggleGroupControl>
@@ -129,22 +139,22 @@ export default function Edit( { attributes, setAttributes } ) {
 			<div { ...blockProps }>
 				<Disabled>
 					<label
-						className="wp-block-tabor-appearance-toggle__label"
+						className="wp-block-tabor-dark-mode-toggle__label"
 						htmlFor="theme-toggle"
 					>
 						<input
 							type="checkbox"
-							className="wp-block-tabor-appearance-toggle__input"
+							className="wp-block-tabor-dark-mode-toggle__input"
 							id="theme-toggle"
 							aria-label={ __(
-								'Toggle appearance',
-								'appearance-toggle-block'
+								'Toggle dark mode',
+								'dark-mode-toggle-block'
 							) }
 						/>
 						<span
 							className={ classnames(
 								className,
-								'wp-block-tabor-appearance-toggle__track',
+								'wp-block-tabor-dark-mode-toggle__track',
 								colorProps.className,
 								borderProps.className
 							) }
@@ -155,19 +165,19 @@ export default function Edit( { attributes, setAttributes } ) {
 							} }
 						>
 							<span
-								className="wp-block-tabor-appearance-toggle__selector"
+								className="wp-block-tabor-dark-mode-toggle__selector"
 								style={ {
 									...colorProps.style.text,
 								} }
 							>
 								<span
-									className="wp-block-tabor-appearance-toggle__icon wp-block-tabor-appearance-toggle__icon--light"
+									className="wp-block-tabor-dark-mode-toggle__icon wp-block-tabor-dark-mode-toggle__icon--light"
 									aria-hidden="true"
 								>
 									<Icon icon={ LightIcon } size={ 16 } />
 								</span>
 								<span
-									className="wp-block-tabor-appearance-toggle__icon wp-block-tabor-appearance-toggle__icon--dark"
+									className="wp-block-tabor-dark-mode-toggle__icon wp-block-tabor-dark-mode-toggle__icon--dark"
 									aria-hidden="true"
 								>
 									<Icon icon={ DarkIcon } size={ 16 } />

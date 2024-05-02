@@ -1,25 +1,24 @@
 /*!***************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/style.scss ***!
   \***************************************************************************************************************************************************************************************************************************************/
-.wp-block-tabor-appearance-toggle {
+.wp-block-tabor-dark-mode-toggle {
   --icon-size: 16px;
 }
-.wp-block-tabor-appearance-toggle.is-medium {
+.wp-block-tabor-dark-mode-toggle.is-medium {
   --icon-size: 18px;
 }
-.wp-block-tabor-appearance-toggle.is-large {
+.wp-block-tabor-dark-mode-toggle.is-large {
   --icon-size: 20px;
 }
 
-.wp-block-tabor-appearance-toggle__label {
+.wp-block-tabor-dark-mode-toggle__label {
   align-items: center;
   display: flex;
   margin: 0;
 }
 
-.wp-block-tabor-appearance-toggle__input {
-  -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
+.wp-block-tabor-dark-mode-toggle__input {
+  clip-path: inset(50%);
   clip: rect(0 0 0 0);
   height: 1px;
   overflow: hidden;
@@ -28,7 +27,7 @@
   width: 1px;
 }
 
-.wp-block-tabor-appearance-toggle__track {
+.wp-block-tabor-dark-mode-toggle__track {
   align-items: center;
   border-radius: 100px;
   cursor: pointer;
@@ -39,15 +38,15 @@
   transition: background-color var(--wp--custom--transition--duration, 200ms) ease-out;
   width: calc(var(--icon-size) * 2.5);
 }
-.wp-block-tabor-appearance-toggle__track:not(.has-background) {
+.wp-block-tabor-dark-mode-toggle__track:not(.has-background) {
   background: var(--wp--preset--color--theme-3);
 }
-.wp-block-tabor-appearance-toggle__track:not(.has-background):hover {
+.wp-block-tabor-dark-mode-toggle__track:not(.has-background):hover {
   background-color: var(--wp--preset--color--theme-4);
   color: var(--wp--preset--color--theme-6);
 }
 
-.wp-block-tabor-appearance-toggle__selector {
+.wp-block-tabor-dark-mode-toggle__selector {
   align-items: center;
   border-radius: 100%;
   display: flex;
@@ -58,30 +57,31 @@
   will-change: transform;
 }
 
-.wp-block-tabor-appearance-toggle__icon {
+.wp-block-tabor-dark-mode-toggle__icon {
   backface-visibility: hidden;
   border-radius: 100%;
-  color: currentColor;
+  color: currentcolor;
   opacity: 1;
   position: absolute;
 }
-.wp-block-tabor-appearance-toggle__icon,
-.wp-block-tabor-appearance-toggle__icon svg {
+.wp-block-tabor-dark-mode-toggle__icon,
+.wp-block-tabor-dark-mode-toggle__icon svg {
   width: var(--icon-size);
   height: var(--icon-size);
 }
 
-.theme-dark .wp-block-tabor-appearance-toggle__input + .wp-block-tabor-appearance-toggle__track .wp-block-tabor-appearance-toggle__selector {
+.theme-dark .wp-block-tabor-dark-mode-toggle__input + .wp-block-tabor-dark-mode-toggle__track .wp-block-tabor-dark-mode-toggle__selector {
   transform: translateX(calc(var(--icon-size) * 1.25));
 }
 
-.wp-block-tabor-appearance-toggle__icon--dark,
-.theme-dark .wp-block-tabor-appearance-toggle__icon--light {
+.wp-block-tabor-dark-mode-toggle__icon--dark {
   visibility: hidden;
 }
 
-.wp-block-tabor-appearance-toggle__icon--light,
-.theme-dark .wp-block-tabor-appearance-toggle__icon--dark {
+.theme-dark .wp-block-tabor-dark-mode-toggle__icon--light {
+  visibility: hidden;
+}
+.theme-dark .wp-block-tabor-dark-mode-toggle__icon--dark {
   visibility: visible;
 }
 

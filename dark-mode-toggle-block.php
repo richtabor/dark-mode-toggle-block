@@ -1,7 +1,7 @@
 <?php
 /**
- * Plugin Name:       Appearance Toggle Block
- * Description:       A WordPress block for toggling between between light and dark appearance on your site.
+ * Plugin Name:       Dark Mode Toggle Block
+ * Description:       A WordPress block for toggling between between light and dark appearances on your site.
  * Requires at least: 6.4
  * Requires PHP:      7.0
  * Version:           0.1.0
@@ -9,9 +9,9 @@
  * Author URI:        https://rich.blog/blocks
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       appearance-toggle-block
+ * Text Domain:       dark-mode-toggle-block
  *
- * @package          tabor/appearance-toggle-block
+ * @package          tabor/dark-mode-toggle-block
  */
 
 /**
@@ -21,12 +21,12 @@
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
-function tabor_appearance_toggle_block_init() {
+function tabor_dark_mode_toggle_block_init() {
 
 	register_block_type( __DIR__ . '/build' );
 
 }
-add_action( 'init', 'tabor_appearance_toggle_block_init' );
+add_action( 'init', 'tabor_dark_mode_toggle_block_init' );
 
 /**
  * Enqueues inline JavaScript for handling site appearance toggling.
@@ -36,11 +36,11 @@ add_action( 'init', 'tabor_appearance_toggle_block_init' );
  * site's theme based on that preference. It also considers the user's system's
  * dark mode preference using the `prefers-color-scheme` media query.
  */
-function tabor_appearance_toggle_inline_scripts() {
+function tabor_dark_mode_toggle_inline_scripts() {
 
     // Register an empty script handle to attach the inline script.
-    wp_register_script('tabor-appearance-toggle-block-inline', '');
-    wp_enqueue_script('tabor-appearance-toggle-block-inline');
+    wp_register_script(   'tabor-dark-mode-toggle-block-inline', '');
+    wp_enqueue_script('tabor-dark-mode-toggle-block-inline');
 
     // Inline script to set the theme based on user preference or system preference.
     $inline_script = <<<SCRIPT
@@ -54,7 +54,7 @@ function tabor_appearance_toggle_inline_scripts() {
 	})();
 	SCRIPT;
 
-    wp_add_inline_script('tabor-appearance-toggle-block-inline', $inline_script);
+    wp_add_inline_script('tabor-dark-mode-toggle-block-inline', $inline_script);
 
 }
-add_action('wp_enqueue_scripts', 'tabor_appearance_toggle_inline_scripts');
+add_action('wp_enqueue_scripts', 'tabor_dark_mode_toggle_inline_scripts');

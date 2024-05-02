@@ -36,18 +36,18 @@ export default function Save( { attributes } ) {
 	return (
 		<div { ...useBlockProps.save( { className: classes } ) }>
 			<label
-				className="wp-block-tabor-appearance-toggle__label"
+				className="wp-block-tabor-dark-mode-toggle__label"
 				htmlFor="theme-toggle"
 			>
 				<input
 					type="checkbox"
-					className="wp-block-tabor-appearance-toggle__input"
+					className="wp-block-tabor-dark-mode-toggle__input"
 					id="theme-toggle"
-					aria-label={ __( 'Toggle appearance' ) }
+					aria-label={ __( 'Toggle dark mode', 'dark-mode-toggle-block') }
 				/>
 				<span
 					className={ classnames(
-						'wp-block-tabor-appearance-toggle__track',
+						'wp-block-tabor-dark-mode-toggle__track',
 						colorProps.className,
 						borderProps.className
 					) }
@@ -58,19 +58,19 @@ export default function Save( { attributes } ) {
 					} }
 				>
 					<span
-						className="wp-block-tabor-appearance-toggle__selector"
+						className="wp-block-tabor-dark-mode-toggle__selector"
 						style={ {
 							...colorProps.style,
 						} }
 					>
 						<span
-							className="wp-block-tabor-appearance-toggle__icon wp-block-tabor-appearance-toggle__icon--light"
+							className="wp-block-tabor-dark-mode-toggle__icon wp-block-tabor-dark-mode-toggle__icon--light"
 							aria-hidden="true"
 						>
 							{ LightIcon }
 						</span>
 						<span
-							className="wp-block-tabor-appearance-toggle__icon wp-block-tabor-appearance-toggle__icon--dark"
+							className="wp-block-tabor-dark-mode-toggle__icon wp-block-tabor-dark-mode-toggle__icon--dark"
 							aria-hidden="true"
 						>
 							{ DarkIcon }

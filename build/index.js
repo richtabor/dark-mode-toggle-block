@@ -1,16 +1,16 @@
-/******/ (function() { // webpackBootstrap
+/******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/edit.js":
 /*!*********************!*\
   !*** ./src/edit.js ***!
   \*********************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": function() { return /* binding */ Edit; }
+/* harmony export */   "default": () => (/* binding */ Edit)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -48,12 +48,7 @@ __webpack_require__.r(__webpack_exports__);
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
  *
- * @param  root0
- * @param  root0.attributes
- * @param  root0.setAttributes
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
- *
- * @return {WPElement} Element to render.
  */
 function Edit({
   attributes,
@@ -85,10 +80,10 @@ function Edit({
     };
 
     // Find the first matching style and set the corresponding icon.
-    const icon = Object.keys(styleToIcons).find(style => className?.includes(style));
-    if (icon) {
+    const iconString = Object.keys(styleToIcons).find(style => className?.includes(style));
+    if (iconString) {
       setAttributes({
-        icon: styleToIcons[icon]
+        icon: styleToIcons[iconString]
       });
     } else {
       // Reset or handle the attribute when no styles are matched.
@@ -96,20 +91,20 @@ function Edit({
         icon: undefined
       });
     }
-  }, [className]);
+  }, [className, setAttributes]);
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
     group: "styles"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalToolsPanel, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('Size')
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('Size', 'dark-mode-toggle-block')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalToolsPanelItem, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('Size'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('Size', 'dark-mode-toggle-block'),
     isShownByDefault: true,
     hasValue: () => !!size,
     onDeselect: () => setAttributes({
       size: undefined
     })
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalToggleGroupControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('Invert', 'appearance-toggle-block'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('Size', 'dark-mode-toggle-block'),
     hideLabelFromVision: true,
     value: size,
     onChange: value => {
@@ -121,44 +116,50 @@ function Edit({
     size: '__unstable-large',
     __nextHasNoMarginBottom: true
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalToggleGroupControlOption, {
-    value: "small",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('Small', 'appearance-toggle-block')
+    value: "small"
+    /* translators: S stands for 'small' and is a size label. */,
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('S', 'dark-mode-toggle-block'),
+    "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('Small', 'dark-mode-toggle-block')
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalToggleGroupControlOption, {
-    value: "medium",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('Medium', 'appearance-toggle-block')
+    value: "medium"
+    /* translators: M stands for 'medium' and is a size label. */,
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('M', 'dark-mode-toggle-block'),
+    "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('Medium', 'dark-mode-toggle-block')
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalToggleGroupControlOption, {
-    value: "large",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('Large', 'appearance-toggle-block')
+    value: "large"
+    /* translators: M stands for 'medium' and is a size label. */,
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('L', 'dark-mode-toggle-block'),
+    "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('Large', 'dark-mode-toggle-block')
   }))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Disabled, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
-    className: "wp-block-tabor-appearance-toggle__label",
+    className: "wp-block-tabor-dark-mode-toggle__label",
     htmlFor: "theme-toggle"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
     type: "checkbox",
-    className: "wp-block-tabor-appearance-toggle__input",
+    className: "wp-block-tabor-dark-mode-toggle__input",
     id: "theme-toggle",
-    "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('Toggle appearance', 'appearance-toggle-block')
+    "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('Toggle dark mode', 'dark-mode-toggle-block')
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: classnames__WEBPACK_IMPORTED_MODULE_1___default()(className, 'wp-block-tabor-appearance-toggle__track', colorProps.className, borderProps.className),
+    className: classnames__WEBPACK_IMPORTED_MODULE_1___default()(className, 'wp-block-tabor-dark-mode-toggle__track', colorProps.className, borderProps.className),
     style: {
       ...borderProps.style,
       ...colorProps.style,
       ...spacingProps.style
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "wp-block-tabor-appearance-toggle__selector",
+    className: "wp-block-tabor-dark-mode-toggle__selector",
     style: {
       ...colorProps.style.text
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "wp-block-tabor-appearance-toggle__icon wp-block-tabor-appearance-toggle__icon--light",
+    className: "wp-block-tabor-dark-mode-toggle__icon wp-block-tabor-dark-mode-toggle__icon--light",
     "aria-hidden": "true"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Icon, {
     icon: LightIcon,
     size: 16
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "wp-block-tabor-appearance-toggle__icon wp-block-tabor-appearance-toggle__icon--dark",
+    className: "wp-block-tabor-dark-mode-toggle__icon wp-block-tabor-dark-mode-toggle__icon--dark",
     "aria-hidden": "true"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Icon, {
     icon: DarkIcon,
@@ -172,12 +173,12 @@ function Edit({
 /*!**********************!*\
   !*** ./src/icons.js ***!
   \**********************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   Icons: function() { return /* binding */ Icons; }
+/* harmony export */   Icons: () => (/* binding */ Icons)
 /* harmony export */ });
 /* harmony import */ var _icons_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./icons/index.js */ "./src/icons/index.js");
 
@@ -206,19 +207,19 @@ const Icons = {
 /*!****************************!*\
   !*** ./src/icons/index.js ***!
   \****************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   CircleDark: function() { return /* reexport safe */ _library_circle_dark__WEBPACK_IMPORTED_MODULE_5__["default"]; },
-/* harmony export */   CircleLight: function() { return /* reexport safe */ _library_circle_light__WEBPACK_IMPORTED_MODULE_4__["default"]; },
-/* harmony export */   EyeDark: function() { return /* reexport safe */ _library_eye_dark__WEBPACK_IMPORTED_MODULE_7__["default"]; },
-/* harmony export */   EyeLight: function() { return /* reexport safe */ _library_eye_light__WEBPACK_IMPORTED_MODULE_6__["default"]; },
-/* harmony export */   FilledDark: function() { return /* reexport safe */ _library_filled_dark__WEBPACK_IMPORTED_MODULE_1__["default"]; },
-/* harmony export */   FilledLight: function() { return /* reexport safe */ _library_filled_light__WEBPACK_IMPORTED_MODULE_0__["default"]; },
-/* harmony export */   StrokeDark: function() { return /* reexport safe */ _library_stroke_dark__WEBPACK_IMPORTED_MODULE_3__["default"]; },
-/* harmony export */   StrokeLight: function() { return /* reexport safe */ _library_stroke_light__WEBPACK_IMPORTED_MODULE_2__["default"]; }
+/* harmony export */   CircleDark: () => (/* reexport safe */ _library_circle_dark__WEBPACK_IMPORTED_MODULE_5__["default"]),
+/* harmony export */   CircleLight: () => (/* reexport safe */ _library_circle_light__WEBPACK_IMPORTED_MODULE_4__["default"]),
+/* harmony export */   EyeDark: () => (/* reexport safe */ _library_eye_dark__WEBPACK_IMPORTED_MODULE_7__["default"]),
+/* harmony export */   EyeLight: () => (/* reexport safe */ _library_eye_light__WEBPACK_IMPORTED_MODULE_6__["default"]),
+/* harmony export */   FilledDark: () => (/* reexport safe */ _library_filled_dark__WEBPACK_IMPORTED_MODULE_1__["default"]),
+/* harmony export */   FilledLight: () => (/* reexport safe */ _library_filled_light__WEBPACK_IMPORTED_MODULE_0__["default"]),
+/* harmony export */   StrokeDark: () => (/* reexport safe */ _library_stroke_dark__WEBPACK_IMPORTED_MODULE_3__["default"]),
+/* harmony export */   StrokeLight: () => (/* reexport safe */ _library_stroke_light__WEBPACK_IMPORTED_MODULE_2__["default"])
 /* harmony export */ });
 /* harmony import */ var _library_filled_light__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./library/filled-light */ "./src/icons/library/filled-light.js");
 /* harmony import */ var _library_filled_dark__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./library/filled-dark */ "./src/icons/library/filled-dark.js");
@@ -243,10 +244,13 @@ __webpack_require__.r(__webpack_exports__);
 /*!******************************************!*\
   !*** ./src/icons/library/circle-dark.js ***!
   \******************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
@@ -268,7 +272,7 @@ const svg = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_comp
   d: "M12 4a8 8 0 1 0 0 16V4ZM2 12C2 6.477 6.477 2 12 2c.375 0 .745.02 1.11.061C18.11 2.614 22 6.852 22 12s-3.89 9.386-8.89 9.939c-.365.04-.735.061-1.11.061-5.523 0-10-4.477-10-10Z",
   clipRule: "evenodd"
 }));
-/* harmony default export */ __webpack_exports__["default"] = (svg);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (svg);
 
 /***/ }),
 
@@ -276,10 +280,13 @@ const svg = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_comp
 /*!*******************************************!*\
   !*** ./src/icons/library/circle-light.js ***!
   \*******************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
@@ -301,7 +308,7 @@ const svg = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_comp
   d: "M12 4a8 8 0 1 0 0 16V4ZM2 12C2 6.477 6.477 2 12 2c.375 0 .745.02 1.11.061C18.11 2.614 22 6.852 22 12s-3.89 9.386-8.89 9.939c-.365.04-.735.061-1.11.061-5.523 0-10-4.477-10-10Z",
   clipRule: "evenodd"
 }));
-/* harmony default export */ __webpack_exports__["default"] = (svg);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (svg);
 
 /***/ }),
 
@@ -309,10 +316,13 @@ const svg = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_comp
 /*!***************************************!*\
   !*** ./src/icons/library/eye-dark.js ***!
   \***************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
@@ -332,7 +342,7 @@ const svg = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_comp
   fill: "currentColor",
   d: "M4.728 12.253a1 1 0 0 0-1.456 1.37c1.182 1.258 2.5 2.227 3.896 2.898l-1.024 1.694a1 1 0 0 0 1.712 1.034l1.214-2.01c.636.178 1.28.297 1.93.357V20a1 1 0 1 0 2 0v-2.404c.65-.06 1.294-.18 1.93-.356l1.214 2.01a1 1 0 1 0 1.712-1.035l-1.024-1.694c1.395-.671 2.714-1.64 3.896-2.898a1 1 0 1 0-1.457-1.37c-2.153 2.29-4.736 3.39-7.271 3.39s-5.118-1.1-7.272-3.39Z"
 }));
-/* harmony default export */ __webpack_exports__["default"] = (svg);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (svg);
 
 /***/ }),
 
@@ -340,10 +350,13 @@ const svg = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_comp
 /*!****************************************!*\
   !*** ./src/icons/library/eye-light.js ***!
   \****************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
@@ -365,7 +378,7 @@ const svg = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_comp
   d: "M12 6c-3.127 0-6.367 1.79-8.638 5.606a.77.77 0 0 0 0 .788C5.633 16.209 8.873 18 12 18s6.367-1.79 8.638-5.606a.77.77 0 0 0 0-.788C18.367 7.791 15.127 6 12 6Zm0-2c3.952 0 7.79 2.272 10.357 6.583a2.77 2.77 0 0 1 0 2.834C19.79 17.727 15.952 20 12 20c-3.952 0-7.79-2.272-10.357-6.583a2.77 2.77 0 0 1 0-2.834C4.21 6.273 8.048 4 12 4Zm0 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-4 2a4 4 0 1 1 8 0 4 4 0 0 1-8 0Z",
   clipRule: "evenodd"
 }));
-/* harmony default export */ __webpack_exports__["default"] = (svg);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (svg);
 
 /***/ }),
 
@@ -373,10 +386,13 @@ const svg = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_comp
 /*!******************************************!*\
   !*** ./src/icons/library/filled-dark.js ***!
   \******************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
@@ -396,7 +412,7 @@ const svg = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_comp
   fill: "currentColor",
   d: "M12.056 3.6a1 1 0 0 0-.908-1.564c-5.123.434-9.144 4.728-9.144 9.962 0 5.522 4.476 9.998 9.998 9.998 5.234 0 9.528-4.021 9.962-9.144a1 1 0 0 0-1.564-.908A6 6 0 0 1 12.055 3.6Z"
 }));
-/* harmony default export */ __webpack_exports__["default"] = (svg);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (svg);
 
 /***/ }),
 
@@ -404,10 +420,13 @@ const svg = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_comp
 /*!*******************************************!*\
   !*** ./src/icons/library/filled-light.js ***!
   \*******************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
@@ -427,7 +446,7 @@ const svg = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_comp
   fill: "currentColor",
   d: "M13 2a1 1 0 1 0-2 0v1a1 1 0 1 0 2 0V2Zm0 19a1 1 0 1 0-2 0v1a1 1 0 1 0 2 0v-1Zm6.777-16.777a1 1 0 0 1 0 1.414l-.71.71a1 1 0 1 1-1.414-1.414l.71-.71a1 1 0 0 1 1.414 0ZM6.347 19.067a1 1 0 1 0-1.414-1.414l-.71.71a1 1 0 1 0 1.414 1.414l.71-.71ZM20 12a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2h-1a1 1 0 0 1-1-1ZM2 11a1 1 0 1 0 0 2h1a1 1 0 1 0 0-2H2Zm15.653 6.653a1 1 0 0 1 1.414 0l.71.71a1 1 0 0 1-1.414 1.414l-.71-.71a1 1 0 0 1 0-1.414ZM5.637 4.223a1 1 0 1 0-1.414 1.414l.71.71a1 1 0 0 0 1.414-1.414l-.71-.71Zm2.12 3.534a6 6 0 1 1 8.486 8.486 6 6 0 0 1-8.486-8.486Z"
 }));
-/* harmony default export */ __webpack_exports__["default"] = (svg);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (svg);
 
 /***/ }),
 
@@ -435,10 +454,13 @@ const svg = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_comp
 /*!******************************************!*\
   !*** ./src/icons/library/stroke-dark.js ***!
   \******************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
@@ -460,7 +482,7 @@ const svg = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_comp
   d: "M12.097 2.53a1 1 0 0 1-.041 1.07 6 6 0 0 0 8.345 8.344 1 1 0 0 1 1.563.908c-.434 5.122-4.728 9.144-9.962 9.144-5.522 0-9.998-4.476-9.998-9.998 0-5.234 4.021-9.528 9.144-9.962a1 1 0 0 1 .949.494ZM9.424 4.424a7.998 7.998 0 1 0 10.152 10.152A8 8 0 0 1 9.424 4.424Z",
   clipRule: "evenodd"
 }));
-/* harmony default export */ __webpack_exports__["default"] = (svg);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (svg);
 
 /***/ }),
 
@@ -468,10 +490,13 @@ const svg = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_comp
 /*!*******************************************!*\
   !*** ./src/icons/library/stroke-light.js ***!
   \*******************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
@@ -493,7 +518,7 @@ const svg = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_comp
   d: "M12 1a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V2a1 1 0 0 1 1-1ZM4.223 4.223a1 1 0 0 1 1.414 0l.71.71a1 1 0 1 1-1.414 1.414l-.71-.71a1 1 0 0 1 0-1.414Zm15.554 0a1 1 0 0 1 0 1.414l-.71.71a1 1 0 0 1-1.414-1.414l.71-.71a1 1 0 0 1 1.414 0ZM9.172 9.172a4 4 0 1 0 5.656 5.656 4 4 0 0 0-5.656-5.656ZM7.757 7.757a6 6 0 1 1 8.486 8.486 6 6 0 0 1-8.486-8.486ZM1 12a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2H2a1 1 0 0 1-1-1Zm19 0a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2h-1a1 1 0 0 1-1-1ZM6.347 17.653a1 1 0 0 1 0 1.414l-.71.71a1 1 0 0 1-1.414-1.414l.71-.71a1 1 0 0 1 1.414 0Zm11.306 0a1 1 0 0 1 1.414 0l.71.71a1 1 0 0 1-1.414 1.414l-.71-.71a1 1 0 0 1 0-1.414ZM12 20a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1Z",
   clipRule: "evenodd"
 }));
-/* harmony default export */ __webpack_exports__["default"] = (svg);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (svg);
 
 /***/ }),
 
@@ -501,7 +526,7 @@ const svg = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_comp
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -571,12 +596,12 @@ __webpack_require__.r(__webpack_exports__);
 /*!*********************!*\
   !*** ./src/save.js ***!
   \*********************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": function() { return /* binding */ Save; }
+/* harmony export */   "default": () => (/* binding */ Save)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -626,30 +651,30 @@ function Save({
       className: classes
     })
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
-    className: "wp-block-tabor-appearance-toggle__label",
+    className: "wp-block-tabor-dark-mode-toggle__label",
     htmlFor: "theme-toggle"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
     type: "checkbox",
-    className: "wp-block-tabor-appearance-toggle__input",
+    className: "wp-block-tabor-dark-mode-toggle__input",
     id: "theme-toggle",
-    "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Toggle appearance')
+    "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Toggle dark mode', 'dark-mode-toggle-block')
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: classnames__WEBPACK_IMPORTED_MODULE_1___default()('wp-block-tabor-appearance-toggle__track', colorProps.className, borderProps.className),
+    className: classnames__WEBPACK_IMPORTED_MODULE_1___default()('wp-block-tabor-dark-mode-toggle__track', colorProps.className, borderProps.className),
     style: {
       ...borderProps.style,
       ...colorProps.style,
       ...spacingProps.style
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "wp-block-tabor-appearance-toggle__selector",
+    className: "wp-block-tabor-dark-mode-toggle__selector",
     style: {
       ...colorProps.style
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "wp-block-tabor-appearance-toggle__icon wp-block-tabor-appearance-toggle__icon--light",
+    className: "wp-block-tabor-dark-mode-toggle__icon wp-block-tabor-dark-mode-toggle__icon--light",
     "aria-hidden": "true"
   }, LightIcon), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "wp-block-tabor-appearance-toggle__icon wp-block-tabor-appearance-toggle__icon--dark",
+    className: "wp-block-tabor-dark-mode-toggle__icon wp-block-tabor-dark-mode-toggle__icon--dark",
     "aria-hidden": "true"
   }, DarkIcon)))));
 }
@@ -660,7 +685,7 @@ function Save({
 /*!************************!*\
   !*** ./src/style.scss ***!
   \************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -673,7 +698,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!************************!*\
   !*** external "React" ***!
   \************************/
-/***/ (function(module) {
+/***/ ((module) => {
 
 "use strict";
 module.exports = window["React"];
@@ -684,7 +709,7 @@ module.exports = window["React"];
 /*!*************************************!*\
   !*** external ["wp","blockEditor"] ***!
   \*************************************/
-/***/ (function(module) {
+/***/ ((module) => {
 
 "use strict";
 module.exports = window["wp"]["blockEditor"];
@@ -695,7 +720,7 @@ module.exports = window["wp"]["blockEditor"];
 /*!********************************!*\
   !*** external ["wp","blocks"] ***!
   \********************************/
-/***/ (function(module) {
+/***/ ((module) => {
 
 "use strict";
 module.exports = window["wp"]["blocks"];
@@ -706,7 +731,7 @@ module.exports = window["wp"]["blocks"];
 /*!************************************!*\
   !*** external ["wp","components"] ***!
   \************************************/
-/***/ (function(module) {
+/***/ ((module) => {
 
 "use strict";
 module.exports = window["wp"]["components"];
@@ -717,7 +742,7 @@ module.exports = window["wp"]["components"];
 /*!*********************************!*\
   !*** external ["wp","element"] ***!
   \*********************************/
-/***/ (function(module) {
+/***/ ((module) => {
 
 "use strict";
 module.exports = window["wp"]["element"];
@@ -728,7 +753,7 @@ module.exports = window["wp"]["element"];
 /*!******************************!*\
   !*** external ["wp","i18n"] ***!
   \******************************/
-/***/ (function(module) {
+/***/ ((module) => {
 
 "use strict";
 module.exports = window["wp"]["i18n"];
@@ -739,7 +764,7 @@ module.exports = window["wp"]["i18n"];
 /*!******************************************!*\
   !*** ./node_modules/classnames/index.js ***!
   \******************************************/
-/***/ (function(module, exports) {
+/***/ ((module, exports) => {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 	Copyright (c) 2018 Jed Watson.
@@ -825,10 +850,10 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 /*!************************!*\
   !*** ./src/block.json ***!
   \************************/
-/***/ (function(module) {
+/***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"tabor/appearance-toggle","version":"0.1.0","title":"Appearance Toggle","category":"design","description":"Allow visitors to switch between light and dark appearances.","supports":{"color":{"link":false,"text":true,"__experimentalSkipSerialization":true},"__experimentalBorder":{"color":true,"radius":true,"style":true,"width":true,"__experimentalSkipSerialization":true,"__experimentalDefaultControls":{"color":false,"radius":false,"style":false,"width":false}},"html":false,"__experimentalSelector":".wp-block-tabor-appearance-toggle__track"},"attributes":{"icon":{"type":"string"},"size":{"type":"string","default":"small"}},"styles":[{"name":"filled","label":"Filled","isDefault":true},{"name":"stroke","label":"Stroke"},{"name":"circle","label":"Circle"},{"name":"eye","label":"Eye"}],"textdomain":"appearance-toggle","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"tabor/dark-mode-toggle","version":"0.1.0","title":"Dark Mode Toggle","category":"design","description":"Allow visitors to switch between light and dark appearances.","supports":{"color":{"link":false,"text":true,"__experimentalSkipSerialization":true},"__experimentalBorder":{"color":true,"radius":true,"style":true,"width":true,"__experimentalSkipSerialization":true,"__experimentalDefaultControls":{"color":false,"radius":false,"style":false,"width":false}},"html":false,"__experimentalSelector":".wp-block-tabor-dark-mode-toggle__track"},"attributes":{"icon":{"type":"string"},"size":{"type":"string","default":"small"}},"styles":[{"name":"filled","label":"Filled","isDefault":true},{"name":"stroke","label":"Stroke"},{"name":"circle","label":"Circle"},{"name":"eye","label":"Eye"}],"textdomain":"appearance-toggle","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ })
 
@@ -863,9 +888,9 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/chunk loaded */
-/******/ 	!function() {
+/******/ 	(() => {
 /******/ 		var deferred = [];
-/******/ 		__webpack_require__.O = function(result, chunkIds, fn, priority) {
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
 /******/ 			if(chunkIds) {
 /******/ 				priority = priority || 0;
 /******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
@@ -874,12 +899,10 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 			}
 /******/ 			var notFulfilled = Infinity;
 /******/ 			for (var i = 0; i < deferred.length; i++) {
-/******/ 				var chunkIds = deferred[i][0];
-/******/ 				var fn = deferred[i][1];
-/******/ 				var priority = deferred[i][2];
+/******/ 				var [chunkIds, fn, priority] = deferred[i];
 /******/ 				var fulfilled = true;
 /******/ 				for (var j = 0; j < chunkIds.length; j++) {
-/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every(function(key) { return __webpack_require__.O[key](chunkIds[j]); })) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
 /******/ 						chunkIds.splice(j--, 1);
 /******/ 					} else {
 /******/ 						fulfilled = false;
@@ -894,50 +917,50 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 			}
 /******/ 			return result;
 /******/ 		};
-/******/ 	}();
+/******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/compat get default export */
-/******/ 	!function() {
+/******/ 	(() => {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = function(module) {
+/******/ 		__webpack_require__.n = (module) => {
 /******/ 			var getter = module && module.__esModule ?
-/******/ 				function() { return module['default']; } :
-/******/ 				function() { return module; };
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
 /******/ 			__webpack_require__.d(getter, { a: getter });
 /******/ 			return getter;
 /******/ 		};
-/******/ 	}();
+/******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/define property getters */
-/******/ 	!function() {
+/******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = function(exports, definition) {
+/******/ 		__webpack_require__.d = (exports, definition) => {
 /******/ 			for(var key in definition) {
 /******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
 /******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
 /******/ 				}
 /******/ 			}
 /******/ 		};
-/******/ 	}();
+/******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	!function() {
-/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
-/******/ 	}();
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
-/******/ 	!function() {
+/******/ 	(() => {
 /******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = function(exports) {
+/******/ 		__webpack_require__.r = (exports) => {
 /******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
 /******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
-/******/ 	}();
+/******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
-/******/ 	!function() {
+/******/ 	(() => {
 /******/ 		// no baseURI
 /******/ 		
 /******/ 		// object to store loaded and loading chunks
@@ -958,17 +981,15 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 		
 /******/ 		// no HMR manifest
 /******/ 		
-/******/ 		__webpack_require__.O.j = function(chunkId) { return installedChunks[chunkId] === 0; };
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
 /******/ 		
 /******/ 		// install a JSONP callback for chunk loading
-/******/ 		var webpackJsonpCallback = function(parentChunkLoadingFunction, data) {
-/******/ 			var chunkIds = data[0];
-/******/ 			var moreModules = data[1];
-/******/ 			var runtime = data[2];
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var [chunkIds, moreModules, runtime] = data;
 /******/ 			// add "moreModules" to the modules object,
 /******/ 			// then flag all "chunkIds" as loaded and fire callback
 /******/ 			var moduleId, chunkId, i = 0;
-/******/ 			if(chunkIds.some(function(id) { return installedChunks[id] !== 0; })) {
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
 /******/ 				for(moduleId in moreModules) {
 /******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
 /******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
@@ -987,17 +1008,17 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 			return __webpack_require__.O(result);
 /******/ 		}
 /******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunktabor_appearance_toggle_block"] = self["webpackChunktabor_appearance_toggle_block"] || [];
+/******/ 		var chunkLoadingGlobal = globalThis["webpackChunktabor_dark_mode_toggle_block"] = globalThis["webpackChunktabor_dark_mode_toggle_block"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
-/******/ 	}();
+/******/ 	})();
 /******/ 	
 /************************************************************************/
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["./style-index"], function() { return __webpack_require__("./src/index.js"); })
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["./style-index"], () => (__webpack_require__("./src/index.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

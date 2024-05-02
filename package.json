@@ -1,5 +1,5 @@
 {
-	"name": "tabor-appearance-toggle-block",
+	"name": "tabor-dark-mode-toggle-block",
 	"version": "0.1.0",
 	"description": "A WordPress block for toggling between between light and dark appearance on your site.",
 	"author": "Rich Tabor",
