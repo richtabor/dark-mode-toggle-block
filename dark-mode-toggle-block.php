@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugin Name:       Dark Mode Toggle Block
  * Description:       A WordPress block for toggling between between light and dark appearances on your site.
@@ -21,12 +22,12 @@
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
-function tabor_dark_mode_toggle_block_init() {
+function tabor_dark_mode_toggle_block_init()
+{
 
-	register_block_type( __DIR__ . '/build' );
-
+	register_block_type(__DIR__ . '/build');
 }
-add_action( 'init', 'tabor_dark_mode_toggle_block_init' );
+add_action('init', 'tabor_dark_mode_toggle_block_init');
 
 /**
  * Enqueues inline JavaScript for handling site appearance toggling.
@@ -36,14 +37,24 @@ add_action( 'init', 'tabor_dark_mode_toggle_block_init' );
  * site's theme based on that preference. It also considers the user's system's
  * dark mode preference using the `prefers-color-scheme` media query.
  */
-function tabor_dark_mode_toggle_inline_scripts() {
+function tabor_dark_mode_toggle_inline_scripts()
+{
+	// Only enqueue the inline script if the block is present on the page.
+	if (!has_block('tabor/dark-mode-toggle')) return;
 
-    // Register an empty script handle to attach the inline script.
-    wp_register_script(   'tabor-dark-mode-toggle-block-inline', '');
-    wp_enqueue_script('tabor-dark-mode-toggle-block-inline');
+	wp_enqueue_style(
+		'tabor-dark-mode-toggle-block-style',
+		plugins_url('build/index.css', __FILE__),
+		array(),
+		filemtime(plugin_dir_path(__FILE__) . 'build/index.css')
+	);
 
-    // Inline script to set the theme based on user preference or system preference.
-    $inline_script = <<<SCRIPT
+	// Register an empty script handle to attach the inline script.
+	wp_register_script('tabor-dark-mode-toggle-block-inline', '');
+	wp_enqueue_script('tabor-dark-mode-toggle-block-inline');
+
+	// Inline script to set the theme based on user preference or system preference.
+	$inline_script = <<<SCRIPT
 	(function() {
 		const body = document.documentElement;
 		const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
@@ -54,7 +65,6 @@ function tabor_dark_mode_toggle_inline_scripts() {
 	})();
 	SCRIPT;
 
-    wp_add_inline_script('tabor-dark-mode-toggle-block-inline', $inline_script);
-
+	wp_add_inline_script('tabor-dark-mode-toggle-block-inline', $inline_script);
 }
 add_action('wp_enqueue_scripts', 'tabor_dark_mode_toggle_inline_scripts');
