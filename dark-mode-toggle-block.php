@@ -42,6 +42,13 @@ function tabor_dark_mode_toggle_inline_scripts()
 	// Only enqueue the inline script if the block is present on the page.
 	if (!has_block('tabor/dark-mode-toggle')) return;
 
+	wp_enqueue_style(
+		'tabor-dark-mode-toggle-block-style',
+		plugins_url('build/index.css', __FILE__),
+		array(),
+		filemtime(plugin_dir_path(__FILE__) . 'build/index.css')
+	);
+
 	// Register an empty script handle to attach the inline script.
 	wp_register_script('tabor-dark-mode-toggle-block-inline', '');
 	wp_enqueue_script('tabor-dark-mode-toggle-block-inline');
