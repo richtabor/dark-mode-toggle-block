@@ -7,3 +7,11 @@ A WordPress block to add a toggle between light and dark appearances, as seen on
 ### Visual
 
 https://github.com/richtabor/dark-mode-toggle-block/assets/1813435/f7255865-6328-4f54-8284-6bb2432d8ab2
+
+### Development
+
+1. Clone the repository into your WordPress plugins directory.
+2. Run `npm install` to install dependencies.
+3. Run `npm start` to start the development server.
+4. Activate the plugin on your local WordPress site.
+5. Add the block to a post or page.
