@@ -1,0 +1,26 @@
+name: Deploy to WordPress.org
+on:
+  push:
+    tags:
+    - "*"
+jobs:
+  tag:
+    name: New tag
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build
+      run: NO_CHECKS=true npm run build
+
+    - name: Deploy to WordPress.org
+      uses: 10up/action-wordpress-plugin-deploy@stable
+      with:
+        generate-zip: true
+      env:
+        SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+        SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+        SLUG: dark-mode-toggle-block
