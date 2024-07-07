@@ -99,10 +99,7 @@ export default function Edit( { attributes, setAttributes } ) {
 							<ToggleGroupControlOption
 								value="small"
 								/* translators: S stands for 'small' and is a size label. */
-								label={ __(
-									'S',
-									'dark-mode-toggle-block'
-								) }
+								label={ __( 'S', 'dark-mode-toggle-block' ) }
 								aria-label={ __(
 									'Small',
 									'dark-mode-toggle-block'
@@ -111,10 +108,7 @@ export default function Edit( { attributes, setAttributes } ) {
 							<ToggleGroupControlOption
 								value="medium"
 								/* translators: M stands for 'medium' and is a size label. */
-								label={ __(
-									'M',
-									'dark-mode-toggle-block'
-								) }
+								label={ __( 'M', 'dark-mode-toggle-block' ) }
 								aria-label={ __(
 									'Medium',
 									'dark-mode-toggle-block'
@@ -123,10 +117,7 @@ export default function Edit( { attributes, setAttributes } ) {
 							<ToggleGroupControlOption
 								value="large"
 								/* translators: M stands for 'medium' and is a size label. */
-								label={ __(
-									'L',
-									'dark-mode-toggle-block'
-								) }
+								label={ __( 'L', 'dark-mode-toggle-block' ) }
 								aria-label={ __(
 									'Large',
 									'dark-mode-toggle-block'
