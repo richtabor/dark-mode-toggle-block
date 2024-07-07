@@ -2,11 +2,12 @@
 /**
  * Plugin Name:       Dark Mode Toggle Block
  * Description:       A WordPress block for toggling between between light and dark appearances on your site.
+ * Plugin URI:        https://rich.blog/dark-mode-toggle-block
  * Requires at least: 6.4
  * Requires PHP:      7.0
  * Version:           0.1.0
  * Author:            Rich Tabor
- * Author URI:        https://rich.blog/blocks
+ * Author URI:        https://rich.blog
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       dark-mode-toggle-block
