@@ -12,7 +12,7 @@ yarn-error.log*
 coverage
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
-build/Release
+build/
 
 # Dependency directories
 node_modules/
