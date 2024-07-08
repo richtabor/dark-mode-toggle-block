@@ -12,7 +12,7 @@
 		"lint:js": "wp-scripts lint-js",
 		"lint:js-fix": "wp-scripts lint-js --fix",
 		"packages-update": "wp-scripts packages-update",
-		"plugin-zip": "wp-scripts plugin-zip",
+		"plugin-zip": "wp-scripts build && wp-scripts plugin-zip",
 		"start": "wp-scripts start",
 		"dev": "wp-scripts start"
 	},
