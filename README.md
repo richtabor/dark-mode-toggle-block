@@ -1,5 +1,7 @@
 # Dark Mode Toggle Block
 
+![Update Version](https://github.com/richtabor/dark-mode-toggle-block/actions/workflows/update-version.yml/badge.svg) ![Create Release](https://github.com/richtabor/dark-mode-toggle-block/actions/workflows/create-release.yml/badge.svg)
+
 A WordPress block to add a toggle between light and dark appearances, as seen on [my blog](https://rich.blog). Adds a `theme-dark` class to the body element, when toggled on. The user's preference is then saved in local storage. Built with [@wordpress/create-block](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-create-block/).
 
 [Read about it on my blog →](https://rich.blog/dark-mode-toggle-block/)
