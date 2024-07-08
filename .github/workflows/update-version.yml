@@ -1,0 +1,45 @@
+name: Update Version
+
+on:
+  push:
+    tags:
+      - '*'
+
+permissions:
+  contents: write
+
+jobs:
+  update-version:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20.11.0'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Update version in package.json
+      run: |
+        TAG_NAME=${GITHUB_REF#refs/tags/}
+        npm version $TAG_NAME --no-git-tag-version
+        sed -i 's/"version": "[^"]*"/"version": "'"$TAG_NAME"'"/' package.json
+
+    - name: Update version in readme.txt and PHP file
+      run: |
+        TAG_NAME=${GITHUB_REF#refs/tags/}
+        sed -i 's/Stable tag: .*/Stable tag: '"$TAG_NAME"'/' readme.txt
+        sed -i 's/Version: .*/Version: '"$TAG_NAME"'/' dark-mode-toggle-block.php
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add package.json readme.txt dark-mode-toggle-block.php
+        git commit -m "Update version to $TAG_NAME"
+        git push origin HEAD
