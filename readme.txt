@@ -2,7 +2,7 @@
 Contributors:      Rich Tabor
 Tags:              block
 Tested up to:      6.6
-Stable tag:        1.0.0
+Stable tag:        1.0.1
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -10,9 +10,10 @@ A WordPress block for toggling between between light and dark appearance on your
 
 == Installation ==
 
-1. Upload the plugin files to the `/wp-content/plugins/dark-mode-toggle-block` directory, or install the plugin through the WordPress plugins screen directly (if available).
+1. Upload the plugin files to the `/wp-content/plugins/` directory, or install the plugin through the WordPress plugins screen directly (if available).
 2. Activate the plugin through the 'Plugins' screen in WordPress
 3. Add the block from the inserter within the WordPress editor.
+4. If necessary, add CSS variables using .theme-dark to assign dark mode colors. [Learn more](https://rich.blog/dark-mode-toggle-block/)
 
 == Frequently Asked Questions ==
 = Can the Dark Mode Toggle block be used with my theme? =
@@ -26,5 +27,10 @@ You can find the development files for the block on [GitHub](https://github.com/
 
 == Changelog ==
 
+= 1.0.1 =
+* Update prefix.
+* Improve inline script.
+* Use apiVersion 3.
+
 = 1.0.0 =
-* Initial release
+* Initial release.
