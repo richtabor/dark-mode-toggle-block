@@ -22,12 +22,12 @@
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
-function tabor_dark_mode_toggle_block_init() {
+function tabordarkmodetoggleblock_init() {
 
 	register_block_type( __DIR__ . '/build' );
 
 }
-add_action( 'init', 'tabor_dark_mode_toggle_block_init' );
+add_action( 'init', 'tabordarkmodetoggleblock_init' );
 
 /**
  * Enqueues inline JavaScript for handling site appearance toggling.
@@ -37,7 +37,7 @@ add_action( 'init', 'tabor_dark_mode_toggle_block_init' );
  * site's theme based on that preference. It also considers the user's system's
  * dark mode preference using the `prefers-color-scheme` media query.
  */
-function tabor_dark_mode_toggle_inline_scripts() {
+function tabordarkmodetoggleblock_scripts() {
 
     // Register an empty script handle to attach the inline script.
     wp_register_script( 'tabor-dark-mode-toggle-block-inline', '' );
@@ -58,4 +58,4 @@ function tabor_dark_mode_toggle_inline_scripts() {
     // Ensure proper escaping
     wp_add_inline_script( 'tabor-dark-mode-toggle-block-inline', $inline_script );
 }
-add_action( 'wp_enqueue_scripts', 'tabor_dark_mode_toggle_inline_scripts' );
+add_action( 'wp_enqueue_scripts', 'tabordarkmodetoggleblock_scripts' );
