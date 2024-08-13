@@ -1,25 +1,20 @@
-name: Create Release
+name: Create Release and Deploy to WordPress.org
 
 on:
     push:
         tags:
             - '*'
 
-permissions:
-    contents: write
-
 jobs:
-    create-release:
+    release-and-deploy:
         runs-on: ubuntu-latest
-
         steps:
-            - name: Checkout repository
-              uses: actions/checkout@v2
+            - uses: actions/checkout@v2
 
             - name: Set up Node.js
               uses: actions/setup-node@v2
               with:
-                  node-version: '20.11.0' # Specify the Node.js version you need
+                  node-version: '20.11.0'
 
             - name: Install dependencies
               run: npm install
@@ -47,3 +42,13 @@ jobs:
                   asset_path: ./dark-mode-toggle-block.zip
                   asset_name: dark-mode-toggle-block.zip
                   asset_content_type: application/zip
+
+            - name: Deploy to WordPress.org
+              uses: 10up/action-wordpress-plugin-deploy@stable
+              with:
+                  generate-zip: true
+                  dry-run: false
+              env:
+                  SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+                  SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+                  SLUG: dark-mode-toggle-block
