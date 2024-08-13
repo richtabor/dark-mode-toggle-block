@@ -1,0 +1,35 @@
+# Directories
+/.git
+/.github
+/.wordpress-org
+/node_modules
+/src
+
+# Files
+*.log
+*.swp
+*.tar.gz
+*.zip
+.DS_Store
+.distignore
+.editorconfig
+.eslintignore
+.eslintrc.js
+.eslintrc.json
+.git
+.gitattributes
+.gitignore
+.npmignore
+.prettierrc.js
+.stylelintignore
+.stylelintrc.json
+LICENSE.md
+behat.yml
+circle.yml
+composer.json
+composer.lock
+package-lock.json
+package.json
+phpcs.xml.dist
+webpack.config.js
+README.md
