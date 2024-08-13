@@ -40,22 +40,22 @@ add_action( 'init', 'tabor_dark_mode_toggle_block_init' );
 function tabor_dark_mode_toggle_inline_scripts() {
 
     // Register an empty script handle to attach the inline script.
-    wp_register_script(   'tabor-dark-mode-toggle-block-inline', '');
-    wp_enqueue_script('tabor-dark-mode-toggle-block-inline');
+    wp_register_script( 'tabor-dark-mode-toggle-block-inline', '' );
+    wp_enqueue_script( 'tabor-dark-mode-toggle-block-inline' );
 
     // Inline script to set the theme based on user preference or system preference.
-    $inline_script = <<<SCRIPT
-	(function() {
-		const body = document.documentElement;
-		const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
-		const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    $inline_script = '
+		(function() {
+			const body = document.documentElement;
+			const isDarkMode = localStorage.getItem("darkMode") === "enabled";
+			const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-		// Apply the 'theme-dark' class based on user or system preference
-		body.classList.toggle('theme-dark', isDarkMode || (!localStorage.getItem('darkMode') && prefersDark));
-	})();
-	SCRIPT;
+			// Apply the "theme-dark" class based on user or system preference
+			body.classList.toggle("theme-dark", isDarkMode || (!localStorage.getItem("darkMode") && prefersDark));
+		})();
+    ';
 
-    wp_add_inline_script('tabor-dark-mode-toggle-block-inline', $inline_script);
-
+    // Ensure proper escaping
+    wp_add_inline_script( 'tabor-dark-mode-toggle-block-inline', $inline_script );
 }
-add_action('wp_enqueue_scripts', 'tabor_dark_mode_toggle_inline_scripts');
+add_action( 'wp_enqueue_scripts', 'tabor_dark_mode_toggle_inline_scripts' );
