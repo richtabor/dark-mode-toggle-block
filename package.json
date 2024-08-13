@@ -2,7 +2,11 @@
 	"name": "dark-mode-toggle-block",
 	"version": "1.0.0",
 	"description": "A WordPress block for toggling between between light and dark appearance on your site.",
-	"author": "Rich Tabor",
+	"author": {
+		"name": "richtabor",
+		"url": "https://rich.blog",
+		"role": "developer"
+	},
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
 	"scripts": {
