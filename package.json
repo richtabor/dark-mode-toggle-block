@@ -1,6 +1,6 @@
 {
 	"name": "dark-mode-toggle-block",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "A WordPress block for toggling between between light and dark appearance on your site.",
 	"author": {
 		"name": "richtabor",
