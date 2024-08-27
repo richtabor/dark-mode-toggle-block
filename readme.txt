@@ -2,7 +2,7 @@
 Contributors:      Rich Tabor
 Tags:              block
 Tested up to:      6.6
-Stable tag:        1.0.1
+Stable tag:        1.0.2
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,9 @@ Please reach out via the official [plugin support forum](https://wordpress.org/s
 You can find the development files for the block on [GitHub](https://github.com/richtabor/dark-mode-toggle-block).
 
 == Changelog ==
+
+= 1.0.2 =
+* Improve block example.
 
 = 1.0.1 =
 * Update prefix.
