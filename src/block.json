@@ -9,7 +9,11 @@
 		"color": {
 			"link": false,
 			"text": true,
-			"__experimentalSkipSerialization": true
+			"__experimentalSkipSerialization": true,
+			"__experimentalDefaultControls": {
+				"background": true,
+				"text": false
+			}
 		},
 		"__experimentalBorder": {
 			"color": true,
