@@ -46,7 +46,12 @@ registerBlockType( metadata.name, {
 			/>
 		</SVG>
 	),
-	example: {},
+	example: {
+		viewportWidth: 300,
+		attributes: {
+			size: 'large',
+		},
+	},
 	edit,
 	save,
 } );
