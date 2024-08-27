@@ -32,18 +32,18 @@
 	cursor: pointer;
 	display: flex;
 	height: calc(var(--icon-size) * 1.75);
+	line-height: 1;
 	padding: 0 calc(var(--icon-size) * 0.25);
 	position: relative;
 	transition: background-color var(--wp--custom--transition--duration, 200ms) ease-out;
 	width: calc(var(--icon-size) * 2.5);
 
 	&:not(.has-background) {
-		background: var(--wp--preset--color--theme-3);
+		background: rgba(195, 195, 195, 0.3);
 	}
 
 	&:not(.has-background):hover {
-		background-color: var(--wp--preset--color--theme-4);
-		color: var(--wp--preset--color--theme-6);
+		background: rgba(195, 195, 195, 0.5);
 	}
 }
 
