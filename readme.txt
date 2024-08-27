@@ -1,5 +1,5 @@
 === Dark Mode Toggle Block ===
-Contributors:      Rich Tabor
+Contributors:      richtabor
 Tags:              block
 Tested up to:      6.6
 Stable tag:        1.0.2
