@@ -27,6 +27,9 @@ You can find the development files for the block on [GitHub](https://github.com/
 
 == Changelog ==
 
+= 1.0.3 =
+* Update readme.
+
 = 1.0.2 =
 * Improve block example.
 
