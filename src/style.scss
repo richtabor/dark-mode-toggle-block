@@ -24,6 +24,10 @@
 	position: absolute;
 	white-space: nowrap;
 	width: 1px;
+
+	&:focus-visible + .wp-block-tabor-appearance-toggle__track
+		outline: auto;
+	}
 }
 
 .wp-block-tabor-dark-mode-toggle__track {
