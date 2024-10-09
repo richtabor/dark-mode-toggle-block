@@ -41,12 +41,14 @@ export default function Save( { attributes } ) {
 			>
 				<input
 					type="checkbox"
+					role="switch"
 					className="wp-block-tabor-dark-mode-toggle__input"
 					id="theme-toggle"
 					aria-label={ __(
 						'Toggle dark mode',
 						'dark-mode-toggle-block'
 					) }
+					aria-live="polite"
 				/>
 				<span
 					className={ classnames(
