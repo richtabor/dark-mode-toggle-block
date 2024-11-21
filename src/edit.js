@@ -133,11 +133,12 @@ export default function Edit( { attributes, setAttributes } ) {
 						<input
 							type="checkbox"
 							className="wp-block-tabor-dark-mode-toggle__input"
-							 role="switch"
+							role="switch"
 							aria-label={ __(
 								'Toggle dark mode',
 								'dark-mode-toggle-block'
 							) }
+							aria-checked="false"
 							tabIndex="0"
 						/>
 						<span
