@@ -129,18 +129,14 @@ export default function Edit( { attributes, setAttributes } ) {
 			</InspectorControls>
 			<div { ...blockProps }>
 				<Disabled>
-					<label
-						className="wp-block-tabor-dark-mode-toggle__label"
-						htmlFor="theme-toggle"
-					>
+					<label className="wp-block-tabor-dark-mode-toggle__label">
 						<input
 							type="checkbox"
 							className="wp-block-tabor-dark-mode-toggle__input"
-							id="theme-toggle"
-							aria-label={ __(
-								'Toggle dark mode',
-								'dark-mode-toggle-block'
-							) }
+							role="switch"
+							aria-label={__('Switch to dark mode, currently light', 'dark-mode-toggle-block')}
+							aria-checked="false"
+							tabIndex="0"
 						/>
 						<span
 							className={ classnames(

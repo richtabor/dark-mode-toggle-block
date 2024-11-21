@@ -23,9 +23,7 @@
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 function tabordarkmodetoggleblock_init() {
-
 	register_block_type( __DIR__ . '/build' );
-
 }
 add_action( 'init', 'tabordarkmodetoggleblock_init' );
 
@@ -38,7 +36,6 @@ add_action( 'init', 'tabordarkmodetoggleblock_init' );
  * dark mode preference using the `prefers-color-scheme` media query.
  */
 function tabordarkmodetoggleblock_scripts() {
-
     // Register an empty script handle to attach the inline script.
     wp_register_script( 'tabor-dark-mode-toggle-block-inline', '' );
     wp_enqueue_script( 'tabor-dark-mode-toggle-block-inline' );

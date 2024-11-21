@@ -35,18 +35,16 @@ export default function Save( { attributes } ) {
 
 	return (
 		<div { ...useBlockProps.save( { className: classes } ) }>
-			<label
-				className="wp-block-tabor-dark-mode-toggle__label"
-				htmlFor="theme-toggle"
-			>
+			<label className="wp-block-tabor-dark-mode-toggle__label">
 				<input
 					type="checkbox"
 					className="wp-block-tabor-dark-mode-toggle__input"
-					id="theme-toggle"
+					role="switch"
 					aria-label={ __(
-						'Toggle dark mode',
+						'Switch to dark mode, currently light',
 						'dark-mode-toggle-block'
 					) }
+					tabIndex="0"
 				/>
 				<span
 					className={ classnames(
@@ -54,6 +52,7 @@ export default function Save( { attributes } ) {
 						colorProps.className,
 						borderProps.className
 					) }
+
 					style={ {
 						...borderProps.style,
 						...colorProps.style,
