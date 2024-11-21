@@ -5,7 +5,7 @@
  * Plugin URI:        https://rich.blog/dark-mode-toggle-block
  * Requires at least: 6.4
  * Requires PHP:      7.0
- * Version:           1.0.4
+ * Version:           1.0.5
  * Author:            Rich Tabor
  * Author URI:        https://rich.blog
  * License:           GPL-2.0-or-later
