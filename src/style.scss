@@ -90,3 +90,8 @@
 		visibility: visible;
 	}
 }
+
+// Update to use :focus-visible instead of :focus
+.wp-block-tabor-dark-mode-toggle__input:focus-visible + .wp-block-tabor-dark-mode-toggle__track {
+    outline: -webkit-focus-ring-color auto 1px;
+}
