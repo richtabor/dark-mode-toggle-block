@@ -41,7 +41,7 @@ export default function Save( { attributes } ) {
 					className="wp-block-tabor-dark-mode-toggle__input"
 					role="switch"
 					aria-label={ __(
-						'Toggle dark mode',
+						'Switch to dark mode, currently light',
 						'dark-mode-toggle-block'
 					) }
 					tabIndex="0"
