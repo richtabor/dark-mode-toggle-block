@@ -21,7 +21,6 @@ function toggleTheme() {
 	const isDark = body.classList.contains('theme-dark');
 
 	// Update localStorage based on the presence of the class.
-		isDark ? 'enabled' : 'disabled'
 	localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
 
 	// Update all toggles' states
