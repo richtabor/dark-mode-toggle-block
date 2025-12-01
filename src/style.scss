@@ -1,5 +1,7 @@
 .wp-block-tabor-dark-mode-toggle {
+	width: fit-content;
 	--icon-size: 16px;
+	font-size: var(--icon-size);
 
 	&.is-medium {
 		--icon-size: 18px;
