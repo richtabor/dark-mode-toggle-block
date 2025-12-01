@@ -48,7 +48,7 @@ function tabordarkmodetoggleblock_head_script() {
 
 			// Apply dark mode if:
 			// 1. User explicitly enabled it (darkMode === "enabled"), OR
-			// 2. No user preference is stored AND system prefers dark mode
+			// 2. User hasn't explicitly disabled it (darkMode !== "disabled") AND system prefers dark mode
 			if (darkMode === "enabled" || (darkMode !== "disabled" && prefersDark)) {
 				root.classList.add("theme-dark");
 			}
