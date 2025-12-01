@@ -33,6 +33,9 @@ import { Icons } from './icons';
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
  *
+ * @param {Object}   props               - Component props.
+ * @param {Object}   props.attributes    - Block attributes.
+ * @param {Function} props.setAttributes - Function to update block attributes.
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
  */
 export default function Edit( { attributes, setAttributes } ) {
@@ -134,7 +137,10 @@ export default function Edit( { attributes, setAttributes } ) {
 							type="checkbox"
 							className="wp-block-tabor-dark-mode-toggle__input"
 							role="switch"
-							aria-label={__('Switch to dark mode, currently light', 'dark-mode-toggle-block')}
+							aria-label={ __(
+								'Switch to dark mode, currently light',
+								'dark-mode-toggle-block'
+							) }
 							aria-checked="false"
 							tabIndex="0"
 						/>

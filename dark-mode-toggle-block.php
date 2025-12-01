@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       Dark Mode Toggle Block
- * Description:       A WordPress block for toggling between between light and dark appearances on your site.
+ * Description:       A WordPress block for toggling between light and dark appearances on your site.
  * Plugin URI:        https://rich.blog/dark-mode-toggle-block
  * Requires at least: 6.4
  * Requires PHP:      7.0
@@ -43,12 +43,12 @@ function tabordarkmodetoggleblock_scripts() {
     // Inline script to set the theme based on user preference or system preference.
     $inline_script = '
 		(function() {
-			const body = document.documentElement;
+			const rootElement = document.documentElement;
 			const isDarkMode = localStorage.getItem("darkMode") === "enabled";
 			const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
 
 			// Apply the "theme-dark" class based on user or system preference
-			body.classList.toggle("theme-dark", isDarkMode || (!localStorage.getItem("darkMode") && prefersDark));
+			rootElement.classList.toggle("theme-dark", isDarkMode || (!localStorage.getItem("darkMode") && prefersDark));
 		})();
     ';
 

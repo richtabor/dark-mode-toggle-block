@@ -22,7 +22,7 @@ const deprecated = [
 			icon: { type: 'string' },
 			size: { type: 'string' },
 		},
-		save: ({ attributes }) => {
+		save: ( { attributes } ) => {
 			const { className, icon, size } = attributes;
 			const colorProps = getColorClassesAndStyles( attributes );
 			const borderProps = getBorderClassesAndStyles( attributes );
