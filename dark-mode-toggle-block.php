@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       Dark Mode Toggle Block
- * Description:       A WordPress block for toggling between between light and dark appearances on your site.
+ * Description:       A WordPress block for toggling between light and dark appearances on your site.
  * Plugin URI:        https://rich.blog/dark-mode-toggle-block
  * Requires at least: 6.4
  * Requires PHP:      7.0
