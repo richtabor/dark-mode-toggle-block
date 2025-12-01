@@ -6,7 +6,7 @@ Stable tag:        1.0.5
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
-A WordPress block for toggling between between light and dark appearance on your site.
+A WordPress block for toggling between light and dark appearance on your site. Automatically respects users' system color scheme preferences.
 
 == Installation ==
 
@@ -16,8 +16,14 @@ A WordPress block for toggling between between light and dark appearance on your
 4. If necessary, add CSS variables using .theme-dark to assign dark mode colors. [Learn more](https://rich.blog/dark-mode-toggle-block/)
 
 == Frequently Asked Questions ==
+= Does the block respect users' system color scheme preferences? =
+Yes! The block automatically detects if users prefer dark mode using `prefers-color-scheme` and applies it by default. Users can still override this preference using the toggle.
+
 = Can the Dark Mode Toggle block be used with my theme? =
-Yes! You will need to add CSS variables to map existing coor values to a dark style though. [Learn more](https://rich.blog/dark-mode-toggle-block/).
+Yes! You will need to add CSS variables to map existing color values to a dark style though. [Learn more](https://rich.blog/dark-mode-toggle-block/).
+
+= Will there be a flash when the page loads? =
+No. The theme preference is applied in the page head before rendering, preventing any flash of unstyled content (FOUC).
 
 = Where can I send feedback or ideas? =
 Please reach out via the official [plugin support forum](https://wordpress.org/support/plugin/dark-mode-toggle-block).

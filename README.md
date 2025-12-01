@@ -2,7 +2,7 @@
 
 [![Create Release and Deploy to WordPress.org](https://github.com/richtabor/dark-mode-toggle-block/actions/workflows/create-release-and-deploy.yml/badge.svg)](https://github.com/richtabor/dark-mode-toggle-block/actions/workflows/create-release-and-deploy.yml)
 
-A WordPress block to add a toggle between light and dark appearances, as seen on [my blog](https://rich.blog). Adds a `theme-dark` class to the body element, when toggled on. The user's preference is then saved in local storage. 
+A WordPress block to add a toggle between light and dark appearances, as seen on [my blog](https://rich.blog). The block respects users' system color scheme preferences (`prefers-color-scheme`) while allowing them to override it. The theme state is saved in local storage and a `theme-dark` class is added to the `<html>` element when dark mode is active. 
 
 [Read about it on my blog →](https://rich.blog/dark-mode-toggle-block/)
 
@@ -11,7 +11,18 @@ A WordPress block to add a toggle between light and dark appearances, as seen on
 https://github.com/richtabor/dark-mode-toggle-block/assets/1813435/f7255865-6328-4f54-8284-6bb2432d8ab2
 
 ### How it works
-When toggled, the block will add a `.theme-dark` class to the body of the site. You can add CSS variables to target dark styles. 
+
+The block automatically respects your visitors' system color scheme preference (`prefers-color-scheme`) while allowing them to override it with the toggle.
+
+**Behavior:**
+- On first visit, the site matches the user's system preference (light or dark mode)
+- Users can click the toggle to override their system preference
+- The user's choice is saved in local storage and persists across page loads
+- The toggle icons (sun/moon) accurately reflect the current mode
+
+When toggled, the block adds a `.theme-dark` class to the `<html>` element. You can add CSS variables to target dark styles.
+
+**Performance:** The theme preference is applied in the `<head>` before the page renders, preventing any flash of unstyled content (FOUC).
 
 I did it this way on [my blog](https://rich.blog), which uses the theme.json `settings.custom.color` values for each color, unless there is a color created within the Site Editor with corresponding slug (i.e. `theme-1-dark`). I used this method so that a user could manipulate any given color without having to modify theme.json.
 
