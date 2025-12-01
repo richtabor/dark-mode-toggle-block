@@ -55,5 +55,5 @@
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",
 	"viewScript": "file:./view.js",
-	"dependencies": ["wp-i18n"]
+	"dependencies": [ "wp-i18n" ]
 }

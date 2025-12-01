@@ -52,7 +52,6 @@ export default function Save( { attributes } ) {
 						colorProps.className,
 						borderProps.className
 					) }
-
 					style={ {
 						...borderProps.style,
 						...colorProps.style,
