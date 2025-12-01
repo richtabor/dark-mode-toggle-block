@@ -6,7 +6,7 @@ Stable tag:        1.0.5
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
-A WordPress block for toggling between between light and dark appearance on your site.
+A WordPress block for toggling between light and dark appearance on your site.
 
 == Installation ==
 
