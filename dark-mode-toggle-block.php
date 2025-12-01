@@ -28,31 +28,32 @@ function tabordarkmodetoggleblock_init() {
 add_action( 'init', 'tabordarkmodetoggleblock_init' );
 
 /**
- * Enqueues inline JavaScript for handling site appearance toggling.
+ * Outputs inline JavaScript in the head for handling initial theme state.
  *
- * This function registers and enqueues an inline JavaScript script that checks
- * the user's preference for dark mode stored in localStorage and adjusts the
- * site's theme based on that preference. It also considers the user's system's
- * dark mode preference using the `prefers-color-scheme` media query.
+ * This script checks the user's preference for dark mode stored in localStorage
+ * and applies the theme immediately to prevent FOUC (flash of unstyled content).
+ * It also considers the user's system's dark mode preference using the
+ * `prefers-color-scheme` media query.
+ *
+ * The script is output in the head as a blocking script to ensure the theme
+ * class is set before the page renders.
  */
-function tabordarkmodetoggleblock_scripts() {
-    // Register an empty script handle to attach the inline script.
-    wp_register_script( 'tabor-dark-mode-toggle-block-inline', '' );
-    wp_enqueue_script( 'tabor-dark-mode-toggle-block-inline' );
-
-    // Inline script to set the theme based on user preference or system preference.
-    $inline_script = '
+function tabordarkmodetoggleblock_head_script() {
+    ?>
+    <script>
 		(function() {
-			const body = document.documentElement;
-			const isDarkMode = localStorage.getItem("darkMode") === "enabled";
+			const root = document.documentElement;
+			const darkMode = localStorage.getItem("darkMode");
 			const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-			// Apply the "theme-dark" class based on user or system preference
-			body.classList.toggle("theme-dark", isDarkMode || (!localStorage.getItem("darkMode") && prefersDark));
+			// Apply dark mode if:
+			// 1. User explicitly enabled it (darkMode === "enabled"), OR
+			// 2. No user preference is stored AND system prefers dark mode
+			if (darkMode === "enabled" || (darkMode !== "disabled" && prefersDark)) {
+				root.classList.add("theme-dark");
+			}
 		})();
-    ';
-
-    // Ensure proper escaping
-    wp_add_inline_script( 'tabor-dark-mode-toggle-block-inline', $inline_script );
+    </script>
+    <?php
 }
-add_action( 'wp_enqueue_scripts', 'tabordarkmodetoggleblock_scripts' );
+add_action( 'wp_head', 'tabordarkmodetoggleblock_head_script', 1 );
